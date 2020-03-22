@@ -19,7 +19,6 @@ spring:
             settings:
                 trace: false
                 web-allow-others: false
-          
     main:
         allow-bean-definition-overriding: true
 javers:
