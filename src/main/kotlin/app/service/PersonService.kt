@@ -13,8 +13,6 @@ class PersonService {
     private lateinit var repository: PersonRepository
     @PostConstruct
     fun init(){
-        repository.save(Person(age = 9, name = "Jake"))
-        repository.save(Person(age = 20, name = "Bob"))
     }
 
     fun findAll(): Any? {

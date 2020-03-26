@@ -17,10 +17,10 @@ import org.springframework.context.annotation.Configuration
 
 @ComponentScan("app.*")
 @EntityScan
-open class EnversCompareApp
+open class JaversCompareApp
 
 
 
 fun main(args: Array<String>) {
-    SpringApplication.run(EnversCompareApp::class.java, *args)
+    SpringApplication.run(JaversCompareApp::class.java, *args)
 }

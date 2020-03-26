@@ -1,0 +1,46 @@
+server:
+    port: 8081
+spring:
+    datasource:
+        url: jdbc:h2:mem:testdb
+        driver-class-name: org.postgresql.Driver
+        username: sa
+        password:
+    jpa:
+
+        hibernate:
+            ddl-auto: create-drop
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: h2
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.H2Dialect
+    h2:
+        console:
+            enabled: true
+            path: /h2-console-javers
+            settings:
+                trace: false
+                web-allow-others: false
+    main:
+        allow-bean-definition-overriding: true
+javers:
+    mappingStyle: FIELD
+    algorithm: SIMPLE
+    commitIdGenerator: synchronized_sequence
+    prettyPrint: true
+    typeSafeValues: false
+    newObjectSnapshot: false
+    packagesToScan:
+    auditableAspectEnabled: true
+    springDataAuditableRepositoryAspectEnabled: true
+    sqlSchema:
+    sqlSchemaManagementEnabled: true
+    sqlGlobalIdCacheDisabled: false
+    objectAccessHook: org.javers.hibernate.integration.HibernateUnproxyObjectAccessHook
+    prettyPrintDateFormats:
+        localDateTime: "dd MMM yyyy, HH:mm:ss"
+        zonedDateTime: "dd MMM yyyy, HH:mm:ssZ"
+        localDate: "dd MMM yyyy"
+        localTime: "HH:mm:ss"
+      
